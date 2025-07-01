@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Nexus Group — инвестиции нового поколения</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Управление капиталом, обучение трейдингу и крипторынку. Бесплатная консультация покажет, как выйти на стабильный доход уже в первый месяц.">
+  <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- OpenGraph / соц-сети -->
+  <meta property="og:title"       content="Nexus Group — управление капиталом и обучение трейдингу">
+  <meta property="og:description" content="Помогаем приумножать капитал на валютных и крипторынках. Индивидуальное сопровождение и авторские стратегии.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://nexuscomand.com">
+  <meta property="og:image"       content="https://nexuscomand.com/media/og-banner.jpg">
+
+  <!-- Structured Data -->
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Nexus Group",
+    "url":"https://nexuscomand.com",
+    "logo":"https://nexuscomand.com/media/og-banner.jpg",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Yerevan",
+      "streetAddress":"ул. Аршакуняц 2/1, оф. 1"
+    },
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "telephone":"+37477123123",
+      "contactType":"customer service"
+    }]
+  }
+  </script>
+  <!-- PWA -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#1f6feb">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css" />
+  <script src="https://www.google.com/recaptcha/api.js?render=6Ld3_3ArAAAAAKwd76a3jTmp9Ok8qHR-AetPx54L"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
+</head>
+
+<body>
+<div id="scroll-progress" aria-hidden="true"></div>
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+<header class="header">
+  <div class="container flex">
+    <a class="brand" href="#">
+      <img src="media/logo.svg" alt="Логотип Nexus Group" width="80" height="60">
+      <span>Nexus Group</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a href="#benefits">Преимущества</a></li>
+        <li><a href="#pricing">Тарифы</a></li>
+        <li><a href="#contact" class="btn btn--sm">Записаться</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__text">
+      <h1>Откройте мир&nbsp;финансов<br>с <span class="accent">Nexus Group</span></h1>
+      <p class="lead">  Бесплатная консультация покажет, как грамотно управлять деньгами
+        и получать стабильный доход уже в первый месяц. <h3>Пора изменить свою жизнь</h3></p>
+
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--lg">Записаться</a>
+          <p class="trust">
+               Нам доверяют <strong id="trust-count">2 848</strong> клиентов
+         </p>
+      </div>
+    </div>
+
+    <figure class="mock">
+      <img src="media/mock-dashboard.png" alt="Интерфейс платформы">
+    </figure>
+  </div>
+</section>
+
+<!-- =========================================================
+     VALUE CARDS  (Почему Nexus Group)
+     ========================================================= -->
+<section id="benefits" class="section">
+  <div class="container">
+    <h2>Почему выбирают Nexus Group?</h2>
+
+    <div class="cards">
+      <article class="card">
+        <span class="card__icon">📈</span>
+        <h3>Рост капитала</h3>
+        <p>Средний прирост счёта клиентов — до 20–30 % в месяц* при
+        дисциплинированной торговле.</p>
+      </article>
+
+      <article class="card">
+        <span class="card__icon">🤝</span>
+        <h3>Куратор 24/7</h3>
+        <p>Личный эксперт отвечает в Telegram за 5 минут.</p>
+      </article>
+
+      <article class="card">
+        <span class="card__icon">🔒</span>
+          <h3>Контроль рисков</h3>
+          <p>Средства всегда на ваших биржевых счётах; мы сопровождаем сделки
+          и помогаем управлять риском.</p>
+      </article>
+
+      <article class="card">
+        <span class="card__icon">🎓</span>
+          <h3>Школа трейдера</h3>
+          <p>Пошаговый курс простым языком: от базовых принципов рынка
+          до прикладного технического и фундаментального анализа.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     QUICK TIPS  (Финансовая грамотность)
+     ========================================================= -->
+<!-- ====== Быстрые советы ====== -->
+<section id="quicktips" class="section">
+  <div class="container">
+    <h2>Финансовая грамотность: быстрые советы</h2>
+
+    <div class="tips">
+      <!-- Карточка 1 -->
+      <article class="tip">
+        <h3>Планируйте бюджет</h3>
+        <p>Правило 50 / 30 / 20 — нужды, желания, инвестиции.</p>
+      </article>
+
+      <!-- Карточка 2 -->
+      <article class="tip">
+        <h3>Диверсифицируйте активы</h3>
+        <p>Комбинируйте акции, облигации и крипто для баланса риска.</p>
+      </article>
+
+      <!-- Карточка 3 -->
+      <article class="tip">
+        <h3>Защитите накопления</h3>
+        <p>Используйте валюту и страховые продукты против инфляции.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PARTNERS  (Trust strip)
+     ========================================================= -->
+<section class="partners">
+  <h2 class="partners__title">Наши партнёры</h2>
+  <div class="container partners__grid">
+    <img src="media/partners/telegram.svg"        alt="Telegram">
+    <img src="media/partners/flask.svg"           alt="Flask">
+    <img src="media/partners/yandex-cloud.svg"    alt="Yandex Cloud">
+    <img src="media/partners/metamask.svg"        alt="MetaMask">
+    <img src="media/partners/tradingview.svg"     alt="TradingView">
+    <img src="media/partners/coinmarketcap.svg"   alt="CoinMarketCap">
+    <img src="media/partners/wwtrade.svg"   alt="WWtrade">
+  </div>
+</section>
+
+
+<!-- =========================================================
+     STATS  (Real income examples)
+     ========================================================= -->
+<section class="stats section section--alt">
+  <div class="container stats__grid">
+    <article class="stat">
+      <span class="counter" data-target="12">0</span>
+      <p class="stat__label">лет на рынке</p>
+    </article>
+    <article class="stat">
+      <span class="counter" data-target="94">0</span>
+      <p class="stat__label">% клиентов с прибылью</p>
+    </article>
+    <article class="stat">
+      <span class="counter" data-target="2848">0</span>
+      <p class="stat__label">довольных инвесторов</p>
+    </article>
+  </div>
+</section>
+
+<!-- =========================================================
+     URGENCY  (Почему важно начать сейчас)
+     ========================================================= -->
+<section id="urgency" class="urgency section section--alt">
+  <div class="container">
+    <h2>Почему важно начать сейчас</h2>
+    <ul class="urgency__list">
+      <li>Количество бесплатных звонков ограничено</li>
+      <li>Рынок растёт: ранний вход — лучшие условия</li>
+      <li>Эксклюзивные материалы доступны только новым клиентам месяца</li>
+    </ul>
+  </div>
+</section>
+<!-- ========== Limited offer ========== -->
+<section class="deal section">
+  <div class="container deal__inner">
+    <h2>🔥 Летняя скидка на школу трейдера20&nbsp;%</h2>
+    <p>До конца акции осталось 
+       <span id="countdown" data-deadline="2025-07-31T23:59:59"></span>
+    </p>
+    <a href="#contact" class="btn btn--lg">Получить скидку</a>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROCESS  (Как мы работаем)
+     ========================================================= -->
+<section id="process" class="section">
+  <div class="container">
+    <h2>Как мы работаем</h2>
+    <ol class="process">
+      <li>Оставляете заявку на звонок</li>
+      <li>Получаете бесплатную консультацию и план действий</li>
+      <li>Двигаетесь к прибыли под сопровождением куратора</li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========================================================
+     ABOUT TEAM
+     ========================================================= -->
+<section id="about" class="about section">
+  <div class="container about__grid">
+    <div class="about__text">
+      <h2>Команда трейдеров и профессиональных аналитиков</h2>
+      <p class="lead">Мы — сплочённая команда практикующих трейдеров и сертифицированных аналитиков, которые превращают данные в рабочие стратегии.</p>
+      <ul class="about__list">
+        <li>Сертифицированные финансовые аналитики с опытом 7+ лет</li>
+        <li>Практикующие трейдеры с подтверждёнными результатами</li>
+        <li>Индивидуальный подход и поддержка 24/7</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PRICING
+     ========================================================= -->
+<section id="pricing" class="pricing section section--alt">
+  <div class="container">
+    <h2>Тарифы для любого уровня</h2>
+
+    <div class="pricing__grid">
+      <!-- START -->
+        <article class="plan">
+          <h3 class="plan__title">Start</h3>
+          <p class="plan__price">0 ₽</p>
+          <ul>
+            <li>Бесплатная консультация</li>
+            <li>Базовый курс</li>
+            <li>Доступ к закрытому Telegram-каналу</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">Выбрать</a>
+        </article>
+
+        <!-- PRO -->
+        <article class="plan plan--pro">
+          <h3 class="plan__title">Pro</h3>
+          <p class="plan__price">19 900 ₽ / мес.</p>
+          <ul>
+            <li>Куратор 24/7</li>
+            <li>Сигналы + алготрейд</li>
+            <li>Персональный анализ рынка в удобное время</li>
+            <li>Доступ к Telegram-каналу с 80 % успешных анализов</li>
+          </ul>
+          <a href="#contact" class="btn">Выбрать</a>
+        </article>
+
+        <!-- VIP -->
+        <article class="plan">
+          <h3 class="plan__title">VIP</h3>
+          <p class="plan__price">по запросу</p>
+          <ul>
+            <li>Family-office формат</li>
+            <li>Персональный аналитик</li>
+            <li>Визит в офис</li>
+            <li>Инвест-идея</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">Связаться</a>
+        </article>
+    </div>
+  </div>
+</section>
+  
+<!-- =========================================================
+     CERTIFICATES & AWARDS
+     ========================================================= -->
+<section id="certificates" class="section section--alt">
+  <div class="container">
+    <h2>Сертификаты и награды</h2>
+    <div class="certs">
+      <img src="media/cert1.webp" alt="Сертификат CFA">
+      <img src="media/cert2.webp" alt="Best Crypto Educator — 2024">
+      <img src="media/cert3.webp" alt="Лицензия № 04513">
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     BLOG HIGHLIGHT
+     ========================================================= -->
+     <!--??????-->
+
+
+
+
+
+
+<!-- =========================================================
+     TESTIMONIALS
+     ========================================================= -->
+<section id="testimonials" class="testimonials section">
+  <div class="container">
+    <h2>Отзывы наших клиентов</h2>
+
+    <div class="slider">
+      <button class="slider__btn prev" aria-label="Назад">‹</button>
+
+      <ul class="slides">
+        <li class="slide">
+          <blockquote>
+            «Уже через 3 недели портфель +11 %. Курсы понятные, куратор всегда на связи».
+            <footer>— Анна К., инженер</footer>
+          </blockquote>
+        </li>
+        <li class="slide">
+          <blockquote>
+            «Алготрейд-бот Nexus экономит мне часы анализа. ROI держится около 17 % в месяц».
+            <footer>— Владимир М., предприниматель</footer>
+          </blockquote>
+        </li>
+        <li class="slide">
+          <blockquote>
+            «Взял тариф Pro — окупился за первый квартал. Честно удивлён уровню сервиса».
+            <footer>— Карен Т., маркетолог</footer>
+          </blockquote>
+        </li>
+      </ul>
+
+      <button class="slider__btn next" aria-label="Вперёд">›</button>
+    </div>
+  </div>
+</section>
+
+ <!-- ===== CONTACT FORM ===== -->
+<section id="contact" class="section" data-aos="fade-up">
+  <div class="container">
+    <h2>Запишитесь на бесплатный звонок</h2>
+
+    <form id="contact-form" action="/new_client" method="post" novalidate>
+      <div class="two-col">
+        <label>
+          Имя
+          <input type="text" name="first_name" required placeholder="Иван">
+        </label>
+        <label>
+          Фамилия
+          <input type="text" name="last_name" required placeholder="Петров">
+        </label>
+      </div>
+
+      <label>
+        Email (необязательно)
+        <input type="email" name="email" placeholder="ivan@example.com">
+      </label>
+
+      <label>
+        Телефон
+        <input id="phone" type="tel" name="phone" required placeholder="номер телефона">
+      </label>
+
+      <input type="hidden" id="recaptchaResponse" name="recaptcha_token">
+
+      <p class="consent-text">
+        Продолжая, я соглашаюсь с
+        <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a> и
+        <a href="/terms.html" target="_blank">Условиями обслуживания</a>.
+      </p>
+
+      <button type="submit" class="btn">Отправить</button>
+    </form>
+
+    <!-- поп-ап “Спасибо” -->
+    <div id="thank-you-popup" style="display:none; opacity:0;">
+      <h2>Поздравляем!</h2>
+      <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     FAQ
+     ========================================================= -->
+  <details class="faq">
+    <summary>Я новичок. Мне подойдёт?</summary>
+    <p>Да. Мы обучаем с нуля: понятные видео-уроки, чек-листы и поддержка куратора 24/7.</p>
+  </details>
+
+  <details class="faq">
+    <summary>Сколько стоит сопровождение?</summary>
+    <p>Тарифы Start, Pro, VIP. Базовый звонок бесплатно, далее — от 19 900 ₽ в месяц.</p>
+  </details>
+
+  <details class="faq">
+    <summary>Как быстро я увижу результат?</summary>
+    <p>В среднем клиенты фиксируют первую прибыль на 4-6 неделе после запуска портфеля.</p>
+  </details>
+
+  <details class="faq">
+    <summary>Насколько это безопасно?</summary>
+    <p>Ваши средства лежат на сегрегированных счетах, доступ только у вас. Мы работаем через API без права вывода.</p>
+  </details>
+
+  <details class="faq">
+    <summary>Нужно ли много времени в день?</summary>
+    <p>Достаточно 15-20 минут, чтобы принять сигналы и ребалансировать портфель по инструкции.</p>
+  </details>
+
+  <details class="faq">
+    <summary>Есть ли налоги?</summary>
+    <p>Доходы от валюты и крипто декларируются в конце года. Даем готовый отчёт для налоговой.</p>
+  </details>
+
+  <details class="faq">
+    <summary>Смогу ли я вывести деньги когда захочу?</summary>
+    <p>Да, активы находятся на вашем счёте; вывести можно в любой рабочий день биржи.</p>
+  </details>
+
+  <details class="faq">
+    <summary>Что, если рынок упадёт?</summary>
+    <p>Часть капитала хранится в стабильных активах, а алгоритм переводит позиции в кэш при высоких рисках.</p>
+  </details>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <p>© 2013–2025 Nexus Group · ИНН 222311559530</p>
+    <nav class="footer__nav">
+      <a href="privacy.html">Политика</a>
+      <a href="terms.html">Условия</a>
+      <a href="https://t.me/nexus_group_invest" target="_blank" rel="noopener">Telegram ↗︎</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- =========================================================
+     SCRIPTS
+     ========================================================= -->
+<script src="main.js" defer></script>
+<!-- + ключ reCAPTCHA: -->
+
+
+</body>
+</html>
