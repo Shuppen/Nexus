@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-
+  // конец DOMContentLoaded
+});
 
 /* ===== TRUST COUNTER ===== */
 (() => {
@@ -383,6 +383,147 @@ const testimonials = window.testimonialData || [];
   });
   next.addEventListener('click', () => {
     slides.scrollBy({ left:  step(), behavior: 'smooth' });
+  });
+})();
+
+/* ===== WHEEL OF FORTUNE ===== */
+(function () {
+  const overlay   = document.getElementById('wheel-overlay');
+  const openBtn   = document.getElementById('hero-spin-button');
+  if (!overlay || !openBtn) return;
+
+  const closeBtn  = overlay.querySelector('.wheel-close');
+  const spinBtn   = overlay.querySelector('#wheel-spin');
+  const canvas    = overlay.querySelector('#wheel-canvas');
+  const resultEl  = overlay.querySelector('#wheel-result');
+  const listEl    = overlay.querySelector('#prize-list');
+  const timerBtn  = openBtn; // show timer inside main button
+
+  const ctx       = canvas.getContext('2d');
+  const center    = canvas.width / 2;
+  const radius    = center - 2;
+  const PRIZES    = window.WHEEL_PRIZES || [];
+
+  const COLORS = {
+    common: '#6FCF97',
+    rare: '#2D9CDB',
+    epic: '#BB6BD9',
+    legendary: '#F2C94C'
+  };
+
+  const LS_KEY = 'wheelLastSpin';
+  let spinning = false;
+
+  function drawWheel() {
+    const slice = 2 * Math.PI / PRIZES.length;
+    for (let i = 0; i < PRIZES.length; i++) {
+      const start = i * slice;
+      ctx.beginPath();
+      ctx.moveTo(center, center);
+      ctx.fillStyle = COLORS[PRIZES[i].r] || '#ccc';
+      ctx.arc(center, center, radius, start, start + slice);
+      ctx.fill();
+      ctx.save();
+      ctx.translate(center, center);
+      ctx.rotate(start + slice / 2);
+      ctx.fillStyle = '#000';
+      ctx.font = '14px sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText(PRIZES[i].t, radius - 10, 4);
+      ctx.restore();
+    }
+  }
+
+  function weightedPick() {
+    const total = PRIZES.reduce((s,p) => s + (p.chance||1), 0);
+    let n = Math.random() * total;
+    for (let i = 0; i < PRIZES.length; i++) {
+      n -= PRIZES[i].chance || 1;
+      if (n <= 0) return i;
+    }
+    return PRIZES.length - 1;
+  }
+
+  function rotateTo(index, cb) {
+    const sliceDeg = 360 / PRIZES.length;
+    const target = 360 * 5 + (360 - index * sliceDeg - sliceDeg / 2);
+    canvas.style.transition = 'transform 4s cubic-bezier(.2,.8,.3,1)';
+    canvas.style.transform = `rotate(${target}deg)`;
+    setTimeout(() => {
+      canvas.style.transition = '';
+      canvas.style.transform = `rotate(${target % 360}deg)`;
+      cb();
+    }, 4000);
+  }
+
+  function updatePrizeList() {
+    if (!listEl) return;
+    listEl.innerHTML = '';
+    PRIZES.forEach(p => {
+      const li = document.createElement('li');
+      li.textContent = `${p.t} — ${p.d} (${p.chance}%)`;
+      li.style.color = COLORS[p.r] || '#000';
+      listEl.appendChild(li);
+    });
+  }
+
+  function timeLeft() {
+    const last = Number(localStorage.getItem(LS_KEY) || 0);
+    return 24*3600*1000 - (Date.now() - last);
+  }
+
+  function format(ms) {
+    const t = Math.max(0, ms);
+    const h = Math.floor(t/3600000);
+    const m = Math.floor(t%3600000/60000);
+    const s = Math.floor(t%60000/1000);
+    return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  }
+
+  function updateTimer() {
+    const left = timeLeft();
+    if (left <= 0) {
+      timerBtn.textContent = timerBtn.dataset.label;
+      spinBtn.disabled = false;
+      return false;
+    } else {
+      timerBtn.textContent = `${timerBtn.dataset.label} (${format(left)})`;
+      spinBtn.disabled = true;
+      return true;
+    }
+  }
+
+  function startTimerWatch() {
+    updateTimer();
+    const id = setInterval(() => {
+      if (!updateTimer()) clearInterval(id);
+    }, 1000);
+  }
+
+  drawWheel();
+  updatePrizeList();
+  startTimerWatch();
+
+  openBtn.dataset.label = openBtn.textContent.trim();
+  openBtn.addEventListener('click', () => {
+    if (timeLeft() > 0) return;
+    overlay.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    overlay.classList.remove('open');
+  });
+
+  spinBtn.addEventListener('click', () => {
+    if (spinning || timeLeft() > 0) return;
+    spinning = true;
+    const pick = weightedPick();
+    rotateTo(pick, () => {
+      resultEl.textContent = PRIZES[pick].t;
+      localStorage.setItem(LS_KEY, Date.now());
+      startTimerWatch();
+      spinning = false;
+    });
   });
 })();
 

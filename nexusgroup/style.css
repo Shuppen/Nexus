@@ -633,3 +633,56 @@ html, body {
 .burger.active span:nth-child(3) {
   transform: rotate(-45deg) translateY(-8px);
 }
+
+/* ===== Wheel of Fortune ===== */
+.wheel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.wheel-overlay.open {
+  display: flex;
+}
+.wheel-modal {
+  position: relative;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-m);
+  width: min(90vw, 360px);
+  text-align: center;
+}
+.wheel-close {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+#wheel-canvas {
+  width: 280px;
+  height: 280px;
+  margin: 1rem auto;
+}
+.wheel-result {
+  margin: .5rem 0;
+  font-weight: 700;
+}
+#wheel-spin[disabled] {
+  opacity: .5;
+  cursor: not-allowed;
+}
+#prize-list {
+  text-align: left;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-left: 1rem;
+  margin-top: .5rem;
+}
+#prize-list li { margin-bottom: .25rem; }

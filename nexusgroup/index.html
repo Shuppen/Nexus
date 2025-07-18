@@ -190,8 +190,22 @@
       <img src="media/mock-dashboard.png" alt="Интерфейс платформы">
     </figure>
   </div>
-  <button id="hero-spin-button" type="button" class="btn btn--lg pulse" style="min-width: 180px;border: 2px solid var(--ng-green-700);margin-top: 2%; margin-left: 19%;">Крутить</button>
+  <button id="hero-spin-button" type="button" class="btn btn--lg pulse" style="min-width:180px;border:2px solid var(--ng-green-700);margin-top:2%;margin-left:19%;">Крутить</button>
 </section>
+
+<!-- ===== Wheel of Fortune ===== -->
+<div id="wheel-overlay" class="wheel-overlay" hidden>
+  <div class="wheel-modal">
+    <button type="button" class="wheel-close">×</button>
+    <canvas id="wheel-canvas" width="300" height="300"></canvas>
+    <div id="wheel-result" class="wheel-result"></div>
+    <button id="wheel-spin" class="btn btn--lg">Крутить</button>
+    <details>
+      <summary>Все награды</summary>
+      <ul id="prize-list"></ul>
+    </details>
+  </div>
+</div>
 
 <!-- =========================================================
      VALUE CARDS  (Почему Nexus Group)
