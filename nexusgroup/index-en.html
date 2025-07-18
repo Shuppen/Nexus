@@ -174,9 +174,10 @@ function gtag_report_conversion(url) {
 
         <div class="hero__actions">
           <a href="#contact" class="btn btn--lg">Book a Call</a>
-            <p class="trust">
-                 Trusted by <strong id="trust-count">2,848</strong> clients
-           </p>
+          <button id="hero-spin-button" type="button" class="btn btn--lg pulse" style="min-width:180px;border:2px solid var(--ng-green-700);margin-left:1rem;">Spin</button>
+          <p class="trust">
+               Trusted by <strong id="trust-count">2,848</strong> clients
+          </p>
         </div>
       </div>
 
@@ -186,29 +187,16 @@ function gtag_report_conversion(url) {
     </div>
   </section>
 
-<!-- ===============================
-     Wheel of Fortune (EN)
-     =============================== -->
-<div id="wheel-overlay" class="wheel-overlay hidden">
+<!-- ===== Wheel of Fortune ===== -->
+<div id="wheel-overlay" class="wheel-overlay" hidden>
   <div class="wheel-modal">
-    <button id="close-wheel" class="btn btn--sm">×</button>
-    <h2 class="wheel-title">🎁 Your chance: spin the wheel!</h2>
-
-    <div class="wheel-wrapper">
-      <div class="svg-wheel-container">
-        <svg id="svg-wheel" width="500" height="500" viewBox="0 0 500 500"></svg>
-        <div class="svg-wheel-arrow"></div>
-      </div>
-
-      <button id="spin-button" class="btn btn--lg">Spin</button>
-      <div id="wheel-result" class="result hidden"></div>
-      <button id="claim-prize" class="btn">Claim prize</button>
-      <div id="wheel-countdown" class="result hidden"></div>
-    </div>
-
-    <details class="prize-toggle">
-      <summary>Show all prizes</summary>
-      <ul id="prize-details"></ul>
+    <button type="button" class="wheel-close">×</button>
+    <canvas id="wheel-canvas" width="300" height="300"></canvas>
+    <div id="wheel-result" class="wheel-result"></div>
+    <button id="wheel-spin" class="btn btn--lg">Spin</button>
+    <details>
+      <summary>All prizes</summary>
+      <ul id="prize-list"></ul>
     </details>
   </div>
 </div>
